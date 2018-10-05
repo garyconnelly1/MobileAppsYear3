@@ -28,7 +28,7 @@ public class PlayerScore : MonoBehaviour {
         playerScoreUI.gameObject.GetComponent<Text>().text = "Score " + score;
         if (timeLeft < 0.1f)
         {
-            levelManager.ChangeLevel("sideScroller1");
+            levelManager.ChangeLevel("LevelsMenu");
         }
 	}
 
@@ -42,7 +42,7 @@ public class PlayerScore : MonoBehaviour {
            
         }
 
-        if (trig.gameObject.name == "Coin")
+        if (trig.gameObject.tag == "Coin")
         {
             score += 10;
             Destroy(trig.gameObject);

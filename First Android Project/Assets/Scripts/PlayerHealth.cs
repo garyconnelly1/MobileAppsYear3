@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
-    
-    
-    
 
-	// Use this for initialization
-	void Start () {
-       
-	}
+
+    private LevelManager levelManager;
+
+    // Use this for initialization
+    void Start () {
+        levelManager = new LevelManager();// create new instance of level manager
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,7 +26,8 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
     void Die() {
-        SceneManager.LoadScene("sideScroller1");
+       // SceneManager.LoadScene("sideScroller1");
         //yield return null;
+        levelManager.ChangeLevel("LevelsMenu");// redirect the user to the level selection menu when player dies
     }
 }

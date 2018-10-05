@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerJumpPower: 1250
   isGrounded: 0
+  distanceToBottomPlayer: 0.9
 --- !u!114 &114519571179120566
 MonoBehaviour:
   m_ObjectHideFlags: 1
