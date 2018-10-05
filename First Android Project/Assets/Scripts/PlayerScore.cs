@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour {
@@ -9,9 +9,13 @@ public class PlayerScore : MonoBehaviour {
     public int score = 0;
     public GameObject timeLeftUI;
     public GameObject playerScoreUI;
+    private LevelManager levelManager;
+
+
 
     void Start()
     {
+        levelManager = new LevelManager();
         DataManagement.dataManagement.loadData();// load the high score at the start of the game
     }
 
@@ -24,7 +28,7 @@ public class PlayerScore : MonoBehaviour {
         playerScoreUI.gameObject.GetComponent<Text>().text = "Score " + score;
         if (timeLeft < 0.1f)
         {
-            SceneManager.LoadScene("sideScroller1");
+            levelManager.ChangeLevel("sideScroller1");
         }
 	}
 
@@ -33,7 +37,7 @@ public class PlayerScore : MonoBehaviour {
         if (trig.gameObject.name == "EndLevel")
         {
             CountScore();
-            SceneManager.LoadScene("NewLevel");// load new level of the game
+            levelManager.ChangeLevel("NewLevel");// load new level of the game
             Debug.Log("New scene");
            
         }
