@@ -14,7 +14,7 @@ public class MainMenuScript : MonoBehaviour {
 	public void PlayGame()
     {
         
-        levelManager.ChangeLevel("sideScroller1");// change level when this method is triggered
+        levelManager.ChangeLevel("LevelsMenu");// change level when this method is triggered
     }
 
     public void Quit()
