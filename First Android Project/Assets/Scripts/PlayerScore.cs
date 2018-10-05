@@ -33,6 +33,8 @@ public class PlayerScore : MonoBehaviour {
         if (trig.gameObject.name == "EndLevel")
         {
             CountScore();
+            SceneManager.LoadScene("NewLevel");// load new level of the game
+            Debug.Log("New scene");
            
         }
 
