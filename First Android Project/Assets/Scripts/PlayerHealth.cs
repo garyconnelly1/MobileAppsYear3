@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 
+    public int deathPoint;
+
 
     private LevelManager levelManager;
 
@@ -15,7 +17,7 @@ public class PlayerHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (gameObject.transform.position.y < -7)
+        if (gameObject.transform.position.y < deathPoint)
         {
             Die();
             //Debug.Log(hasDied);

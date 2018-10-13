@@ -379,6 +379,11 @@ Prefab:
       propertyPath: playerScoreUI
       value: 
       objectReference: {fileID: 1343373858}
+    - target: {fileID: 114753266907612868, guid: bd8f29b05b05f2d4caa7a105c6331e01,
+        type: 2}
+      propertyPath: deathPoint
+      value: -7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd8f29b05b05f2d4caa7a105c6331e01, type: 2}
   m_IsPrefabAsset: 0
