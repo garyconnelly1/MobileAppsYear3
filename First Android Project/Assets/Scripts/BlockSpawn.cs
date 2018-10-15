@@ -5,51 +5,30 @@ using UnityEngine;
 public class BlockSpawn : MonoBehaviour {
 
     public GameObject block;
-    float randX;
-    //Vector2 spawnPoint;
     public float spawnRate = 2f;
     public float nextSpawn = 0.0f;
-
     public GameObject[] obstacles;
-
     public Transform spawnPoint;
-
-    public float timeToBoost = 5f;
-    public float nextBoost;
 
     void Start()
     {
-        Time.timeScale = 1f;
-        nextSpawn = Time.time + spawnRate;
+        nextSpawn = Time.time + spawnRate; // initialise the first spawn time
     }
 
 	
 	
 	// Update is called once per frame
 	void Update () {
-        if (Time.time > nextSpawn)
+        if (Time.time > nextSpawn) // if 2 seconds passes
         {
-            SpawnObstacle(); ;
-
-           /* if (Time.unscaledTime > nextBoost)
-               BoostTime(); */
+            SpawnObstacle(); // spawn a random obstacle object
         }
 	}
 
     void SpawnObstacle()
     {
-        nextSpawn = Time.time + spawnRate;
-        int randomObstacle = Random.Range(0, obstacles.Length);
-        Instantiate(obstacles[randomObstacle], spawnPoint.position, Quaternion.identity);
-        //Time.timeScale += 0.25f;
-
+        nextSpawn = Time.time + spawnRate; // reset the timer
+        int randomObstacle = Random.Range(0, obstacles.Length); // get a random index on the obstacles array
+        Instantiate(obstacles[randomObstacle], spawnPoint.position, Quaternion.identity); // create the obstacle object
     }
-
-    /*
-    void BoostTime()
-    {
-        nextBoost = Time.unscaledTime + timeToBoost;
-        Time.timeScale += 0.25f;
-    }
-    */
 }
