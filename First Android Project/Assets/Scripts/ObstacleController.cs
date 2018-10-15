@@ -6,10 +6,12 @@ public class ObstacleController : MonoBehaviour {
 
     public float moveSpeed = -5f;
 
+    private LevelManager levelManager;
+
     // Use this for initialization
     void Start () {
-		
-	}
+        levelManager = new LevelManager();// create new instance of level manager
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -27,7 +29,8 @@ public class ObstacleController : MonoBehaviour {
        // Debug.Log("Hit");
         if (other.gameObject.tag == "EndlessRunnerHamster")
         {
-            Debug.Log("Hit Hamster");
+            levelManager.ChangeLevel("LevelsMenu");
+            //Debug.Log("Hit Hamster");
         }
     }
 }

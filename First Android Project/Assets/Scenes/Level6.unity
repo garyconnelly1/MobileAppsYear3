@@ -213,6 +213,7 @@ MonoBehaviour:
   spawnRate: 2
   nextSpawn: 0
   obstacles:
+  - {fileID: 1608476540745534, guid: 8f46d8ead112c634e82dd66bbcf26927, type: 2}
   - {fileID: 1925403226915046, guid: 10a5ed244f4a34142b88d202b75f9820, type: 2}
   spawnPoint: {fileID: 2066313711}
   timeToBoost: 5
@@ -506,7 +507,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &985994591
 GameObject:
   m_ObjectHideFlags: 0
