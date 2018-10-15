@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class EndlessRunner : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+    private Vector2 targetPos;
+    public int playerJumpPower = 1250;
+    public float jumpHeight = 5f;
+    public bool isGrounded = true;
+
+    // Update is called once per frame
+    void Update () {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+           
+            Debug.Log("Up Arrow");
+            Jump();
+        }
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    void Jump()
+    {
+        Debug.Log("Inside jump");
+        GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
+        isGrounded = false;
+    }
 }

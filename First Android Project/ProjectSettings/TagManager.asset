@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - BreakBox
   - Coin
+  - BoxObstacle
+  - EndlessRunnerHamster
   layers:
   - Default
   - TransparentFX
