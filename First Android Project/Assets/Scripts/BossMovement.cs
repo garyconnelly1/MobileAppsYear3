@@ -5,7 +5,6 @@ using UnityEngine;
 public class BossMovement : MonoBehaviour {
 
     public int bossSpeed;
-  //  public int xMove;
     public float xMax;
     public float xMin;
     private bool isRight;
