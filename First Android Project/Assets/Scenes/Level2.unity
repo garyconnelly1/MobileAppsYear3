@@ -1069,6 +1069,22 @@ MonoBehaviour:
   xMax: 160
   yMin: 0
   yMax: 100
+--- !u!1 &622346824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1034703478051106, guid: 9ccee3fcba8d947449951a532c6d0948,
+    type: 2}
+  m_PrefabInternal: {fileID: 2051893638}
+--- !u!114 &622346825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 622346824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d303c0a081ec1e4a9773ac3117e298f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &631503439
 Prefab:
   m_ObjectHideFlags: 0

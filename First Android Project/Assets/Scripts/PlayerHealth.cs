@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour {
 
     public int deathPoint;
-
-
     private LevelManager levelManager;
 
     // Use this for initialization
@@ -20,16 +18,13 @@ public class PlayerHealth : MonoBehaviour {
         if (gameObject.transform.position.y < deathPoint)
         {
             Die();
-            //Debug.Log(hasDied);
-
         }
 
        
 	}
 
-    void Die() {
-       // SceneManager.LoadScene("sideScroller1");
-        //yield return null;
+    void Die()
+    {
         levelManager.ChangeLevel("LevelsMenu");// redirect the user to the level selection menu when player dies
     }
 }
