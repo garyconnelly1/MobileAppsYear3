@@ -12,50 +12,40 @@ public class BossMovement : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        isRight = true;
+        isRight = true; // so the boss starts by moving right
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (transform.position.x < xMax && isRight == true)
+        if (transform.position.x < xMax && isRight == true) 
         {
-            moveRight();
-            Debug.Log(transform.position.x);
+            moveRight(); // call the move right method
         }
         if (transform.position.x >= xMax)
         {
-            Debug.Log("isRight = false");
-            isRight = false;
-           
+            isRight = false; // reset isRight to false to stop the movement
         }
         if (!isRight)
         {
-            moveLeft();
+            moveLeft(); // start moving left
         }
 
         if (transform.position.x <= xMin)
         {
-            isRight = true;
+            isRight = true; // reset isRight to true so it will turn around again and move right
         }
-        
-
-       // gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMove, 0) * bossSpeed;
-       
-
     }
 
     void moveLeft()
     {
         transform.position = new Vector2(transform.position.x - bossSpeed * Time.deltaTime,
-         transform.position.y);
-
+         transform.position.y); // create a new vector2 that will move the boss negatively along the x axis
     }
 
     void moveRight()
     {
         transform.position = new Vector2(transform.position.x + bossSpeed * Time.deltaTime,
-          transform.position.y);
-
+          transform.position.y); // create a new vector2 that will move the boss positively along the x axis
     }
 }
