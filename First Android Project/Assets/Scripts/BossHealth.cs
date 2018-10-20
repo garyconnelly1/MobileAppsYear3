@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour {
     public int bossScore;
+    public GameObject door;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
-        bossScore = 50;
+       // bossScore = 50;
 
     }
 	
@@ -36,5 +37,6 @@ public class BossHealth : MonoBehaviour {
     {
         Debug.Log("Kill boss");
         Destroy(this.gameObject);
+        Destroy(door.gameObject);
     }
 }
