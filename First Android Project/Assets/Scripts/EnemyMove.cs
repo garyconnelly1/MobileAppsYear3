@@ -25,15 +25,15 @@ public class EnemyMove : MonoBehaviour {
         if (hit.distance < hitDistance)
         {
             flip();
-            if (hit.collider.tag == "Player")
+            if (hit.collider.tag == "Player") // if the enemy hits the player
             {
-                Destroy(hit.collider.gameObject);
+                Destroy(hit.collider.gameObject); // kill the player and redirect to levels menu
                 levelManager.ChangeLevel("LevelsMenu");
             }
         }
        
 	}
-    void flip ()
+    void flip () // flip the enemy when it reaches a certain position
     {
         if (xMove > 0)
         {

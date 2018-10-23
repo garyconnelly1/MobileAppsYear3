@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
         if (gameObject.transform.position.y < deathPoint)
         {
-            Die();
+            Die(); // kill the player when it falls below a certain point on the y axis
         }
 
        

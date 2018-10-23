@@ -17,7 +17,7 @@ public class ReSpawn : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D trig)
     {
-        //Debug.Log("Hit");
+       
         if (canTransport == true)
         {
             trig.gameObject.transform.position = sp2.gameObject.transform.position;

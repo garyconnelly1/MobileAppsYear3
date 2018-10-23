@@ -13,9 +13,7 @@ public class EnemyHealth : MonoBehaviour {
 
         if (gameObject.transform.position.y < -10)
         {
-            Destroy(gameObject);
-            //Debug.Log(hasDied);
-
+            Destroy(gameObject); // simply destroy the enemy object when it falls off the platform
         }
 
     }

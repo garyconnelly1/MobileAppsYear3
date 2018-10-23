@@ -16,22 +16,11 @@ public class HorizontalGroundMove : MonoBehaviour {
 	void Update () {
 
          RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(xMove, 0));
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMove, 0) * groundSpeed;
-        // RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(xMove, 0));
-        //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMove, 0) * groundSpeed;
-        //RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(xMove,0));
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMove, 0) * groundSpeed; // so it will move along x axis
        
-
         if (hit.distance < flipDistance)
         {
             flip();
-            /*
-            if (hit.collider.tag == "Player")
-            {
-                Destroy(hit.collider.gameObject);
-                levelManager.ChangeLevel("LevelsMenu");
-            }
-            */
         }
 
     }

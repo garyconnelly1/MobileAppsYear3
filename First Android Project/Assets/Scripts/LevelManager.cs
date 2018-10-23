@@ -14,8 +14,6 @@ public class LevelManager : MonoBehaviour {
     public void QuitGame()
     {
         Application.Quit();//closes the application once this method is triggered
-        Debug.Log("Quitting game");
-
     }
 
 }

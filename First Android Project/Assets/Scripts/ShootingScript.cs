@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class ShootingScript : MonoBehaviour {
     public float shootingPosition;
@@ -19,9 +20,11 @@ public class ShootingScript : MonoBehaviour {
 
     }
 
-    void Shoot()
+    public void Shoot()
     {
         Instantiate(bullet, spawnPoint.position, Quaternion.identity); // create the seed object
     }
 
-    }
+  
+
+}

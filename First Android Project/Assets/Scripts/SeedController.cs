@@ -9,8 +9,8 @@ public class SeedController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        isLeft = Player_move.facingRight; // initialise the direction of the player by accessing the static variable on Player_move
-	}
+        isLeft = Player_move.facingRight; // initialise the direction of the player by accessing the static variable on Player_move 
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,7 +25,5 @@ public class SeedController : MonoBehaviour {
             transform.position = new Vector2(transform.position.x - moveSpeed * Time.deltaTime,
            transform.position.y); // move the seed accross the screen on the negative x axis
         }
-        
-
     }
 }

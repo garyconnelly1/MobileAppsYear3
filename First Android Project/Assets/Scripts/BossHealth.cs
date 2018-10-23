@@ -17,7 +17,6 @@ public class BossHealth : MonoBehaviour {
 	void Update () {
         if (bossScore == 0)
         {
-            //Debug.Log("Kill boss");
             Die();
         }
 		
@@ -35,8 +34,7 @@ public class BossHealth : MonoBehaviour {
 
     void Die()
     {
-        Debug.Log("Kill boss");
-        Destroy(this.gameObject);
-        Destroy(door.gameObject);
+        Destroy(this.gameObject); // destroy the boss
+        Destroy(door.gameObject); // destroy the door
     }
 }
