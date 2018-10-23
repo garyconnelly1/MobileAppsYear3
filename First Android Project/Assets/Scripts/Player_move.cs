@@ -28,6 +28,7 @@ public class Player_move : MonoBehaviour {
     {
         //controls
         moveX = Input.GetAxis("Horizontal");
+       // Debug.Log(moveX);
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             Jump();
@@ -95,6 +96,16 @@ public class Player_move : MonoBehaviour {
         }
 
 
+    }
+
+    public void SayHellLeft()
+    {
+        
+    }
+
+    public void SayHellRight()
+    {
+      
     }
 
 }
