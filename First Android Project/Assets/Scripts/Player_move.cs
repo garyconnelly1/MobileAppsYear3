@@ -2,22 +2,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 
 public class Player_move : MonoBehaviour {
 
-    private int playerSpeed = 10;
+    private int playerSpeed = 115;
     //private bool facingRight = false;
     public static bool facingRight = false;
     public int playerJumpPower = 1250;
     private float moveX;
+    private float testX;
     public bool isGrounded;
     public float distanceToBottomPlayer = 0.9f;
     
 
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
         playerRaycast();
         PlayerMove();
@@ -26,31 +28,20 @@ public class Player_move : MonoBehaviour {
 
     void PlayerMove()
     {
+
+        // KeyBoardMovement();
         //controls
-        moveX = Input.GetAxis("Horizontal");
-       // Debug.Log(moveX);
-        if (Input.GetButtonDown("Jump") && isGrounded == true)
-        {
-            Jump();
-        }
-        //animation
-        //player direction
-        if (moveX < 0.0f && facingRight == false)
-        {
-            FlipPlayer();
-        }
-        else if (moveX > 0.0f && facingRight == true)
-        {
-            FlipPlayer();
-        }
-        //physics
-        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2 (
-            moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
+        // 
+        TouchMovements();
+      
+      
+      
 
     }
 
     private void FlipPlayer()
     {
+        Debug.Log("flipped");
         //flip code
         facingRight = !facingRight;
         Vector2 localScale = gameObject.transform.localScale;
@@ -58,12 +49,17 @@ public class Player_move : MonoBehaviour {
         transform.localScale = localScale;
     }
 
-    void Jump()
+    public void Jump()
     {
         //Debug.Log("Inside jump");
         //jumping code
-        GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
-        isGrounded = false;
+        if (isGrounded == true)
+        {
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
+            isGrounded = false;
+
+        }
+        
     }
 
     void OnCollisionEnter2D (Collision2D col)
@@ -98,14 +94,53 @@ public class Player_move : MonoBehaviour {
 
     }
 
-    public void SayHellLeft()
+    void TouchMovements()
     {
-        
+        moveX = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+        // Debug.Log(moveX);
+        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        {
+            Jump();
+        }
+        //animation
+        //player direction
+        if (moveX < 0.0f && facingRight == false)
+        {
+            FlipPlayer();
+        }
+        else if (moveX > 0.0f && facingRight == true)
+        {
+            FlipPlayer();
+        }
+        //physics
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(
+            moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
+
+
+
     }
 
-    public void SayHellRight()
+    void KeyBoardMovement()
     {
-      
+        playerSpeed = 10;
+        testX = Input.GetAxis("Horizontal");
+        // Debug.Log(moveX);
+        if (Input.GetButtonDown("Jump") && isGrounded == true)
+        {
+            Jump();
+        }
+        //animation
+        //player direction
+        if (testX < 0.0f && facingRight == false)
+        {
+            FlipPlayer();
+        }
+        else if (moveX > 0.0f && facingRight == true)
+        {
+            FlipPlayer();
+        }
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(
+        testX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
     }
 
 }
