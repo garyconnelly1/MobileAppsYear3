@@ -30,7 +30,7 @@ public class Player_move : MonoBehaviour {
         //controls
 
          KeyBoardMovement();
-        //TouchMovements();
+        // TouchMovements();
 
     }
 
@@ -84,7 +84,17 @@ public class Player_move : MonoBehaviour {
     void TouchMovements() // touch control code
     {
         moveX = CrossPlatformInputManager.GetAxisRaw("Horizontal");
-       
+
+        // animations
+        if (moveX != 0)
+        {
+            GetComponent<Animator>().SetBool("isMoving", true); // play the moving animation
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("isMoving", false); // play the idol animation
+        }
+
         //player direction
         if (moveX < 0.0f && facingRight == false) // so the player is facing left when moving left
         {
@@ -110,6 +120,16 @@ public class Player_move : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && isGrounded == true) // if the space bar is hit
         {
             Jump();
+        }
+
+        // animations
+        if (testX != 0)
+        {
+            GetComponent<Animator>().SetBool("isMoving", true); // play the moving animation
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("isMoving", false); // play the idol animation
         }
 
       
