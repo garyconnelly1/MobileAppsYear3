@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour {
 
-    public float moveSpeed = -5f;
+    private float moveSpeed = -7f;
 
     private LevelManager levelManager;
 

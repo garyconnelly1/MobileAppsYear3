@@ -216,8 +216,81 @@ MonoBehaviour:
   - {fileID: 1608476540745534, guid: 8f46d8ead112c634e82dd66bbcf26927, type: 2}
   - {fileID: 1925403226915046, guid: 10a5ed244f4a34142b88d202b75f9820, type: 2}
   spawnPoint: {fileID: 2066313711}
-  timeToBoost: 5
-  nextBoost: 0
+--- !u!1001 &554084706
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4034338531780172, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034338531780172, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034338531780172, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034338531780172, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034338531780172, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034338531780172, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034338531780172, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4034338531780172, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1503011355341142, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
+      propertyPath: m_Name
+      value: Hamster (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1503011355341142, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
+      propertyPath: m_TagString
+      value: EndlessRunnerHamster
+      objectReference: {fileID: 0}
+    - target: {fileID: 114631486046978934, guid: a6e873c5ed44ce84889be63fb450289a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114296887450704398, guid: a6e873c5ed44ce84889be63fb450289a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114269233734241766, guid: a6e873c5ed44ce84889be63fb450289a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114698274789248308, guid: a6e873c5ed44ce84889be63fb450289a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61190346916591632, guid: a6e873c5ed44ce84889be63fb450289a,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &772072091
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &913220071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -427,8 +500,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerJumpPower: 1000
-  jumpHeight: 3
-  isGrounded: 0
 --- !u!212 &913220074
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -771,6 +842,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1633947040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1503011355341142, guid: a6e873c5ed44ce84889be63fb450289a,
+    type: 2}
+  m_PrefabInternal: {fileID: 554084706}
+--- !u!114 &1633947041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1633947040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38bcba59656697744a7bb85ec602bb38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerJumpPower: 1250
 --- !u!1001 &1877355312
 Prefab:
   m_ObjectHideFlags: 0
@@ -968,5 +1056,3 @@ MonoBehaviour:
   nextSpawn: 0
   obstacles: []
   spawnPoint: {fileID: 0}
-  timeToBoost: 5
-  nextBoost: 0
