@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (gameObject.transform.position.y < -10)
+        if (gameObject.transform.position.y < -20)
         {
             Destroy(gameObject); // simply destroy the enemy object when it falls off the platform
         }
