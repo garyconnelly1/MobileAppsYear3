@@ -25,7 +25,6 @@ public class EnemyMove : MonoBehaviour {
         if (hit.distance < hitDistance)
         {
             flip();
-            Debug.Log("Flip");
             if (hit.collider.tag == "Player") // if the enemy hits the player
             {
                 Destroy(hit.collider.gameObject); // kill the player and redirect to levels menu

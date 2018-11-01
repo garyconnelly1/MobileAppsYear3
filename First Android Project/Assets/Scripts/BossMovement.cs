@@ -17,7 +17,7 @@ public class BossMovement : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
        
 
@@ -27,6 +27,7 @@ public class BossMovement : MonoBehaviour {
         }
         if (transform.position.x >= xMax)
         {
+            Flip();
             isRight = false; // reset isRight to false to stop the movement
         }
         if (!isRight)
@@ -36,6 +37,7 @@ public class BossMovement : MonoBehaviour {
 
         if (transform.position.x <= xMin)
         {
+            Flip();
             isRight = true; // reset isRight to true so it will turn around again and move right
         }
     }
@@ -64,5 +66,12 @@ public class BossMovement : MonoBehaviour {
             Destroy(other.gameObject); // destroy that seed object
         }
         */
+    }
+
+    void Flip()
+    {
+        Vector2 localScale = gameObject.transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 }
