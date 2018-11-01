@@ -25,6 +25,7 @@ public class EnemyMove : MonoBehaviour {
         if (hit.distance < hitDistance)
         {
             flip();
+            Debug.Log("Flip");
             if (hit.collider.tag == "Player") // if the enemy hits the player
             {
                 Destroy(hit.collider.gameObject); // kill the player and redirect to levels menu
@@ -35,6 +36,10 @@ public class EnemyMove : MonoBehaviour {
 	}
     void flip () // flip the enemy when it reaches a certain position
     {
+        Vector2 localScale = gameObject.transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
+
         if (xMove > 0)
         {
             xMove = -1;
