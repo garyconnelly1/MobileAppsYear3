@@ -8,12 +8,17 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Player_move : MonoBehaviour {
 
     private int playerSpeed = 115;
-    public static bool facingRight = false;
+    public static bool facingRight;
     public int playerJumpPower = 1250;
     private float moveX;
     private float testX;
     public bool isGrounded;
     public float distanceToBottomPlayer = 0.9f;
+
+    void start()
+    {
+        facingRight = false;
+    }
     
 
 	
@@ -136,6 +141,7 @@ public class Player_move : MonoBehaviour {
         //player direction
         if (testX < 0.0f && facingRight == false) // so the player is facing left when moving left
         {
+            Debug.Log(testX + "   " + facingRight);
             FlipPlayer();
         }
         else if (testX > 0.0f && facingRight == true) // so the player is facing right when moving right

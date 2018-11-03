@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour {
         if (gameObject.transform.position.y < deathPoint)
         {
             Die(); // kill the player when it falls below a certain point on the y axis
+            Player_move.facingRight = false; // reset the direction the player is facing when it dies
         }
 
        
