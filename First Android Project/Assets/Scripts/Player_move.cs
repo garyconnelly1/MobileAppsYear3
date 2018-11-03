@@ -141,7 +141,6 @@ public class Player_move : MonoBehaviour {
         //player direction
         if (testX < 0.0f && facingRight == false) // so the player is facing left when moving left
         {
-            Debug.Log(testX + "   " + facingRight);
             FlipPlayer();
         }
         else if (testX > 0.0f && facingRight == true) // so the player is facing right when moving right
