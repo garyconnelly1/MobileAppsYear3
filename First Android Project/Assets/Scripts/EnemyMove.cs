@@ -27,6 +27,7 @@ public class EnemyMove : MonoBehaviour {
             flip();
             if (hit.collider.tag == "Player") // if the enemy hits the player
             {
+                Player_move.facingRight = false; // to reset the direction of the player
                 Destroy(hit.collider.gameObject); // kill the player and redirect to levels menu
                 levelManager.ChangeLevel("LevelsMenu");
             }
