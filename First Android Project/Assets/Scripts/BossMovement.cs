@@ -58,6 +58,7 @@ public class BossMovement : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player") // if the boss hits the player
         {
+            Player_move.facingRight = false; // reset the directiom the player is facing
             levelManager.ChangeLevel("LevelsMenu"); // redirect back to level selection menu
         }
         /*
