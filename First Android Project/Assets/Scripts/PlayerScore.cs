@@ -9,14 +9,18 @@ public class PlayerScore : MonoBehaviour {
     public int score = 0;
     public GameObject timeLeftUI;
     public GameObject playerScoreUI;
+    public GameObject highScore;
     private LevelManager levelManager;
 
 
 
     void Start()
     {
+        Scene m_Scene = SceneManager.GetActiveScene();
+        string sceneName = m_Scene.name;
         levelManager = new LevelManager();
         DataManagement.dataManagement.loadData();// load the high score at the start of the game
+        highScore.gameObject.GetComponent<Text>().text = "High Score " + HighScoreCalculation.getHighScore(sceneName);
     }
 
 	
