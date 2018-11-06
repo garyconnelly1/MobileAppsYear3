@@ -53,6 +53,7 @@ public class Player_move : MonoBehaviour {
     {
         if (isGrounded == true) // only jump if the player is already on the ground
         {
+           
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower); // character moves up
             isGrounded = false; // character is not grounded and therefore cannot jump
 
@@ -89,6 +90,7 @@ public class Player_move : MonoBehaviour {
     void TouchMovements() // touch control code
     {
         moveX = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+        playerSpeed = 35;
 
         // animations
         if (moveX != 0)

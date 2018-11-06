@@ -800,6 +800,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deffd745d5f19274fb53cf0aeadd79cb, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &310796911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114269233734241766, guid: a6e873c5ed44ce84889be63fb450289a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1792584113}
+  m_Script: {fileID: 11500000, guid: 01153a12c69a8324b84f613cfd58923c, type: 3}
 --- !u!1 &321324097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,7 +1672,12 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 289947280}
+      objectReference: {fileID: 310796911}
+    - target: {fileID: 114542424420764972, guid: a6ed4f6bd9567b4469c3022f1c79f638,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Jump
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6ed4f6bd9567b4469c3022f1c79f638, type: 2}
   m_IsPrefabAsset: 0

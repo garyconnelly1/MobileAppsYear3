@@ -19,7 +19,7 @@ public class EndlessRunner : MonoBehaviour {
         }
 	}
 
-    void Jump()
+    public void Jump()
     {
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower); // move the player upward
     }
