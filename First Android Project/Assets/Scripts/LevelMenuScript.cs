@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts;
 
 public class LevelMenuScript : MonoBehaviour {
 
@@ -16,32 +17,33 @@ public class LevelMenuScript : MonoBehaviour {
     // Different Options
     public void Level1()
     {
-        SwitchScene("Level1");
+        // SwitchScene("Level1");
+        SwitchScene(Levels.Level_1);
     }
 
     public void Level2()
     {
-        SwitchScene("Level2");
+        SwitchScene(Levels.Level_2);
     }
 
     public void Level3()
     {
-        SwitchScene("Level3");
+        SwitchScene(Levels.Level_3);
     }
 
      public void Level4()
     {
-        SwitchScene("Level4");
+        SwitchScene(Levels.Level_4);
     }
 
     public void Level5()
     {
-        SwitchScene("Level5");
+        SwitchScene(Levels.Level_5);
     }
 
     public void Level6()
     {
-        SwitchScene("Level6");
+        SwitchScene(Levels.Level_6);
     }
 
     public void redirect()
