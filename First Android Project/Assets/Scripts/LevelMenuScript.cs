@@ -48,7 +48,7 @@ public class LevelMenuScript : MonoBehaviour {
 
     public void redirect()
     {
-        SwitchScene("MainMenu");
+        SwitchScene(Levels.Main_menu);
     }
 
     void SwitchScene(string sceneName) // Delegate the navigation of levels to its own method

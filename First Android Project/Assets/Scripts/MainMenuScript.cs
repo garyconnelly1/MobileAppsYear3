@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Scripts;
 
 public class MainMenuScript : MonoBehaviour {
 
@@ -14,7 +15,7 @@ public class MainMenuScript : MonoBehaviour {
 	public void PlayGame()
     {
         
-        levelManager.ChangeLevel("LevelsMenu");// change level when this method is triggered
+        levelManager.ChangeLevel(Levels.Level_menu);// change level when this method is triggered
     }
 
     public void Quit()

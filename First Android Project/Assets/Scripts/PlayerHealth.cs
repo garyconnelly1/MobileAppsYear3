@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.Scripts;
 
 public class PlayerHealth : MonoBehaviour {
 
@@ -26,6 +27,6 @@ public class PlayerHealth : MonoBehaviour {
 
     void Die()
     {
-        levelManager.ChangeLevel("LevelsMenu");// redirect the user to the level selection menu when player dies
+        levelManager.ChangeLevel(Levels.Level_menu);// redirect the user to the level selection menu when player dies
     }
 }
