@@ -17,13 +17,14 @@ public class LevelMenuScript : MonoBehaviour {
     // Different Options
     public void Level1()
     {
-        // SwitchScene("Level1");
-        SwitchScene(Levels.Level_1);
+       // SwitchScene(Levels.Level_1);
+        SwitchScene(Levels.First_tutorial);
     }
 
     public void Level2()
     {
-        SwitchScene(Levels.Level_2);
+        // SwitchScene(Levels.Level_2);
+        SwitchScene(Levels.Two_Three_tutorial);
     }
 
     public void Level3()
@@ -33,17 +34,20 @@ public class LevelMenuScript : MonoBehaviour {
 
      public void Level4()
     {
-        SwitchScene(Levels.Level_4);
+        // SwitchScene(Levels.Level_4);
+        SwitchScene(Levels.Fourth_level_tutorial);
     }
 
     public void Level5()
     {
-        SwitchScene(Levels.Level_5);
+        // SwitchScene(Levels.Level_5);
+        SwitchScene(Levels.Fifth_level_tutorial);
     }
 
     public void Level6()
     {
-        SwitchScene(Levels.Level_6);
+        // SwitchScene(Levels.Level_6);
+        SwitchScene(Levels.Sixth_level_tutorial);
     }
 
     public void redirect()
