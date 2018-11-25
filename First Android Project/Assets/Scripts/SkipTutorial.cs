@@ -13,7 +13,6 @@ public class SkipTutorial : MonoBehaviour {
     {
         Scene m_Scene = SceneManager.GetActiveScene(); // get a handle on the active scene
         sceneName = m_Scene.name; // get a handle on the active scene name
-        Debug.Log("Inside skip");
     }
 	
 	
@@ -43,6 +42,9 @@ public class SkipTutorial : MonoBehaviour {
                 manager.ChangeLevel(Levels.Level_5);
                 break;
             case Levels.Sixth_level_tutorial:
+                manager.ChangeLevel(Levels.Level_6);
+                break;
+            case Levels.Winner_Screen:
                 manager.ChangeLevel(Levels.Level_6);
                 break;
             default:

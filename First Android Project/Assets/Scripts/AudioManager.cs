@@ -43,7 +43,7 @@ public class AudioManager : MonoBehaviour {
        
     }
 
-    public void Mute()
+    public void Mute() // for when the player selects "mute in the pause menu as per design document"
     {
 
         Debug.Log("mute " + sourceName);

@@ -21,5 +21,6 @@ namespace Assets.Scripts
         public const string Fourth_level_tutorial = "TurotialLevel4";
         public const string Fifth_level_tutorial = "Tutorial5";
         public const string Sixth_level_tutorial = "Tutorial6";
+        public const string Winner_Screen = "WinnerScreen";
     }
 }
