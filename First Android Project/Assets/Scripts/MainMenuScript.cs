@@ -6,10 +6,12 @@ using Assets.Scripts;
 public class MainMenuScript : MonoBehaviour {
 
     private LevelManager levelManager;//get handle on LevelManager object
+    
 
     void Start()
     {
         levelManager = new LevelManager();// create new instance of level manager
+
     }
 
 	public void PlayGame()

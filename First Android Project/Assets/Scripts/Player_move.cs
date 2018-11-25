@@ -14,10 +14,13 @@ public class Player_move : MonoBehaviour {
     private float testX;
     public bool isGrounded;
     public float distanceToBottomPlayer = 0.9f;
+    public AudioManager audioManager;
 
     void start()
     {
         facingRight = false;
+       // audioManager = new AudioManager();
+        audioManager.Play("MainTheme");
     }
     
 

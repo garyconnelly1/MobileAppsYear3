@@ -155,6 +155,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac6c78b3e8c7a94ea51197a11547d59, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &17845130 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114205073861415568, guid: 9ac6c78b3e8c7a94ea51197a11547d59,
+    type: 2}
+  m_PrefabInternal: {fileID: 17845129}
+  m_Script: {fileID: 11500000, guid: d106a2996dfb19c4791a79ef059a7c9c, type: 3}
 --- !u!1 &64764039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2950,6 +2956,11 @@ Prefab:
       propertyPath: highScore
       value: 
       objectReference: {fileID: 1933710948}
+    - target: {fileID: 114269233734241766, guid: a6e873c5ed44ce84889be63fb450289a,
+        type: 2}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 17845130}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
   m_IsPrefabAsset: 0
