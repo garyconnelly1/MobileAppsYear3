@@ -15,6 +15,7 @@ public class Player_move : MonoBehaviour {
     public bool isGrounded;
     public float distanceToBottomPlayer = 0.9f;
     public AudioManager audioManager;
+    public bool isTouch = false;
 
     void start()
     {
@@ -35,10 +36,16 @@ public class Player_move : MonoBehaviour {
 
     void PlayerMove()
     {
-        //controls
-
-         KeyBoardMovement();
-        // TouchMovements();
+        if (PlayerPrefs.GetString("Control") == "Touch")
+        {
+            TouchMovements();
+        }
+        else
+        {
+            KeyBoardMovement();
+        }
+        
+        // 
 
     }
 
@@ -93,7 +100,7 @@ public class Player_move : MonoBehaviour {
     void TouchMovements() // touch control code
     {
         moveX = CrossPlatformInputManager.GetAxisRaw("Horizontal");
-        playerSpeed = 35;
+        playerSpeed = 50;
 
         // animations
         if (moveX != 0)

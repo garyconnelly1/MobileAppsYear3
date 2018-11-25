@@ -17,7 +17,7 @@ public class MainMenuScript : MonoBehaviour {
 	public void PlayGame()
     {
         
-        levelManager.ChangeLevel(Levels.Level_menu);// change level when this method is triggered
+        levelManager.ChangeLevel(Levels.Control_Settings);// change level when this method is triggered
     }
 
     public void Quit()

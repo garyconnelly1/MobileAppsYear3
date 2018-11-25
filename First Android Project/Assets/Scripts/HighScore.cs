@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HighScore : MonoBehaviour {
+public class HighScoreCalculation : MonoBehaviour {
+    private static int PlayerHighScore;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public static int getHighScore(string level) // use a static method so we can access it without needing an instance
+    {
+        return PlayerPrefs.GetInt(level); // return the highscore for the level that was passed in
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public static void setHighScore(string level, int score) // use a static method so we can access it without needing an instance
+    {
+        PlayerPrefs.SetInt(level, score); // set the high score for the level that was passed in, using the score that was passed in
+    }
 }
