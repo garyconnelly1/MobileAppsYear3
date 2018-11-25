@@ -7,6 +7,8 @@ using System;
 public class AudioManager : MonoBehaviour {
 
     public Sound[] sounds; // so that we can manage all of our audio files from this class
+    public bool isMuted = false;
+    public string sourceName;
 
 	// Use this for initialization
 	void Awake () {
@@ -23,7 +25,8 @@ public class AudioManager : MonoBehaviour {
 
     void Start()
     {
-        Play("MainTheme"); // anytime the audion manager is in a level, automatically play the main theme at the start of the level
+        sourceName = "MainTheme";
+        Play(sourceName); // anytime the audion manager is in a level, automatically play the main theme at the start of the level
     }
 	
 	public void Play(string name)
@@ -36,5 +39,21 @@ public class AudioManager : MonoBehaviour {
             return;
         }
         s.source.Play(); // play the audio
+       
+       
+    }
+
+    public void Mute()
+    {
+
+        Debug.Log("mute " + sourceName);
+        Sound s = Array.Find(sounds, sound => sound.name == sourceName); // call back function for finding the audio source in the array
+        if (s == null)
+        {
+            Debug.Log("Sound " + name + " does not exist");
+            return;
+        }
+        s.source.mute = !s.source.mute;
+
     }
 }

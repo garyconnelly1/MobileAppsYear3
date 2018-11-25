@@ -223,6 +223,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1838200395180066, guid: a778c85b31d25d94099938064da3c778,
     type: 2}
   m_PrefabInternal: {fileID: 57114485}
+--- !u!114 &98340897 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114205073861415568, guid: 9ac6c78b3e8c7a94ea51197a11547d59,
+    type: 2}
+  m_PrefabInternal: {fileID: 348763306}
+  m_Script: {fileID: 11500000, guid: d106a2996dfb19c4791a79ef059a7c9c, type: 3}
 --- !u!1001 &126560701
 Prefab:
   m_ObjectHideFlags: 0
@@ -984,6 +990,21 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114529718824863530, guid: a9b1a5069cfcdd7408d3204c511806a9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 98340897}
+    - target: {fileID: 114529718824863530, guid: a9b1a5069cfcdd7408d3204c511806a9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Mute
+      objectReference: {fileID: 0}
+    - target: {fileID: 114686355272071024, guid: a9b1a5069cfcdd7408d3204c511806a9,
+        type: 2}
+      propertyPath: m_Text
+      value: MUTE/UNMUTE
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b1a5069cfcdd7408d3204c511806a9, type: 2}

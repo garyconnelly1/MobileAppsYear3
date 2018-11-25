@@ -2443,6 +2443,21 @@ Prefab:
       propertyPath: m_Name
       value: PauseMenuCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 114529718824863530, guid: a9b1a5069cfcdd7408d3204c511806a9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 17845130}
+    - target: {fileID: 114529718824863530, guid: a9b1a5069cfcdd7408d3204c511806a9,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Mute
+      objectReference: {fileID: 0}
+    - target: {fileID: 114686355272071024, guid: a9b1a5069cfcdd7408d3204c511806a9,
+        type: 2}
+      propertyPath: m_Text
+      value: MUTE/UNMUTE
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b1a5069cfcdd7408d3204c511806a9, type: 2}
   m_IsPrefabAsset: 0
