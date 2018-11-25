@@ -12,7 +12,7 @@ public class SkipTutorial : MonoBehaviour {
     void Start()
     {
         Scene m_Scene = SceneManager.GetActiveScene(); // get a handle on the active scene
-        sceneName = m_Scene.name; // get a handle on the active scene name
+        sceneName = m_Scene.name; // get a handle on the active scenes name
     }
 	
 	

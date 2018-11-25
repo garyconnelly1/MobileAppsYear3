@@ -22,7 +22,11 @@ public class ShootingScript : MonoBehaviour {
 
     public void Shoot()
     {
-        Instantiate(bullet, spawnPoint.position, Quaternion.identity); // create the seed object
+        if (transform.position.x > shootingPosition)
+        {
+            Instantiate(bullet, spawnPoint.position, Quaternion.identity); // create the seed object
+        }
+       
     }
 
   
