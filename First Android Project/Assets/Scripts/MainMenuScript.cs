@@ -20,6 +20,11 @@ public class MainMenuScript : MonoBehaviour {
         levelManager.ChangeLevel(Levels.Control_Settings);// change level when this method is triggered
     }
 
+    public void ShareButton()
+    {
+        levelManager.ChangeLevel(Levels.Share);// change level when this method is triggered
+    }
+
     public void Quit()
     {
         levelManager.QuitGame();// when the user clicks "QUIT"

@@ -29,4 +29,9 @@ public class TouchControlls : MonoBehaviour { // Simple class to manage how the 
         PlayerPrefs.SetString("Control", "Key");
         manager.ChangeLevel(Levels.Level_menu);
     }
+
+    public void MainMenu()
+    {
+        manager.ChangeLevel(Levels.Main_menu);
+    }
 }

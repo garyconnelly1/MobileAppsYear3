@@ -8,10 +8,12 @@ using Assets.Scripts;
 public class FaceBookConnection : MonoBehaviour {
 
     private string highScore;
-    int score; 
+    int score;
+    LevelManager manager;
 
     void Start()
     {
+        manager = new LevelManager();
         score = HighScoreCalculation.getHighScore(Levels.Level_6);
        
     }
@@ -63,5 +65,10 @@ public class FaceBookConnection : MonoBehaviour {
             "High Score!",
             "I have a high score of " + score + " in the endless Runner Level on Mango's Big Adventure. Give it a try!",
             new System.Uri("https://github.com/garyconnelly1/MobileAppsYear3/blob/master/DesignImages/MBA.PNG"));
+    }
+
+    public void MainMenu()
+    {
+        manager.ChangeLevel(Levels.Main_menu);
     }
 }

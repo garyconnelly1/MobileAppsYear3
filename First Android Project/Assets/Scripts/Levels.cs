@@ -23,5 +23,6 @@ namespace Assets.Scripts
         public const string Sixth_level_tutorial = "Tutorial6";
         public const string Winner_Screen = "WinnerScreen";
         public const string Control_Settings = "ControllSettings";
+        public const string Share = "Share";
     }
 }
