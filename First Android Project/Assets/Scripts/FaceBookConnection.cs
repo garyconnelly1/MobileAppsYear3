@@ -3,10 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Facebook.Unity;
 using UnityEngine.UI;
+using Assets.Scripts;
 
 public class FaceBookConnection : MonoBehaviour {
 
-	private void Awake()
+    private string highScore;
+    int score; 
+
+    void Start()
+    {
+        score = HighScoreCalculation.getHighScore(Levels.Level_6);
+       
+    }
+
+
+    private void Awake()
     {
         if (!FB.IsInitialized)
         {
@@ -48,6 +59,9 @@ public class FaceBookConnection : MonoBehaviour {
 
     public void Share()
     {
-       // FB.ShareLink(new System.Uri("https://github.com/garyconnelly1/MobileAppsYear3", "High Score!", "game", ));
+        FB.ShareLink(new System.Uri("https://github.com/garyconnelly1/MobileAppsYear3"),
+            "High Score!",
+            "I have a high score of " + score + " in the endless Runner Level on Mango's Big Adventure. Give it a try!",
+            new System.Uri("https://github.com/garyconnelly1/MobileAppsYear3/blob/master/DesignImages/MBA.PNG"));
     }
 }
