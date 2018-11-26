@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Assets.Scripts;
 
 public class PlayerScore : MonoBehaviour {
     private float timeLeft = 120f;
@@ -11,13 +12,14 @@ public class PlayerScore : MonoBehaviour {
     public GameObject playerScoreUI;
     public GameObject highScore;
     private LevelManager levelManager;
+    string sceneName;
 
 
 
     void Start()
     {
         Scene m_Scene = SceneManager.GetActiveScene(); // get a handle on the active scene
-        string sceneName = m_Scene.name; // get a handle on the active scene name
+        sceneName = m_Scene.name; // get a handle on the active scene name
         levelManager = new LevelManager(); // get a new instaqnce of the level manager object
         DataManagement.dataManagement.loadData();// load the high score at the start of the game
         highScore.gameObject.GetComponent<Text>().text = "High Score " + HighScoreCalculation.getHighScore(sceneName); // load the highscore from the player prefs
@@ -33,7 +35,7 @@ public class PlayerScore : MonoBehaviour {
         if (timeLeft < 0.1f) // if the time runs out
         {
             Player_move.facingRight = false; // reset the direction the player is facing
-            levelManager.ChangeLevel("LevelsMenu"); // redirect to the LevelsMenu
+            levelManager.ChangeLevel(Levels.Level_menu); // redirect to the LevelsMenu
         }
 	}
 
@@ -43,7 +45,15 @@ public class PlayerScore : MonoBehaviour {
         {
             CountScore();
             CountScorePlayerPrefs(); // count the score
-            levelManager.ChangeLevel("LevelsMenu");// load new level of the game 
+            if (sceneName == Levels.Level_5)
+            {
+                levelManager.ChangeLevel(Levels.Winner_Screen);// load winner screen 
+            }
+            else
+            {
+                levelManager.ChangeLevel(Levels.Level_menu);// load new level of the game 
+            }
+            
         }
 
         if (trig.gameObject.tag == "Coin") // if the player hits a seed

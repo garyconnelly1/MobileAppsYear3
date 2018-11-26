@@ -23,29 +23,29 @@ public class SkipTutorial : MonoBehaviour {
 
     public void Skip()
     {
-         switch (sceneName)
+         switch (sceneName) // Switch statement on the tutorial scenes to determine what level to skip to.
          {
-            case Levels.First_tutorial:
+            case Levels.First_tutorial:  // For the opening tutorial>
             
-                 manager.ChangeLevel(Levels.First_level_tutorial);
+                 manager.ChangeLevel(Levels.First_level_tutorial); // Go to tutorial for level 1.
                 break;
-            case Levels.First_level_tutorial:
-                manager.ChangeLevel(Levels.Level_1);
+            case Levels.First_level_tutorial: // For the first tutorial>
+                manager.ChangeLevel(Levels.Level_1); // Go to level 1.
                 break;
-            case Levels.Two_Three_tutorial:
-                manager.ChangeLevel(Levels.Level_2);
+            case Levels.Two_Three_tutorial: // For the tutorial for the 2nd and 3rd levels> 
+                manager.ChangeLevel(Levels.Level_2); // Just skip to level 2.
                 break;
-            case Levels.Fourth_level_tutorial:
-                manager.ChangeLevel(Levels.Level_4);
+            case Levels.Fourth_level_tutorial: // For the fourth tutorial>
+                manager.ChangeLevel(Levels.Level_4); // Skip to level 4.
                 break;
-            case Levels.Fifth_level_tutorial:
-                manager.ChangeLevel(Levels.Level_5);
+            case Levels.Fifth_level_tutorial: // For the fifth tutorial>
+                manager.ChangeLevel(Levels.Level_5); // Skip to level 5.
                 break;
-            case Levels.Sixth_level_tutorial:
-                manager.ChangeLevel(Levels.Level_6);
+            case Levels.Sixth_level_tutorial: // For the last tutorial>
+                manager.ChangeLevel(Levels.Level_6); // Skip to level 6.
                 break;
-            case Levels.Winner_Screen:
-                manager.ChangeLevel(Levels.Level_6);
+            case Levels.Winner_Screen: // For the Winner screen>
+                manager.ChangeLevel(Levels.Level_6); // Skip to level 6.
                 break;
             default:
                  Debug.Log("Error in switch");
