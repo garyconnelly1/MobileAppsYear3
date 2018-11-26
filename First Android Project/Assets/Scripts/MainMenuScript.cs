@@ -5,28 +5,28 @@ using Assets.Scripts;
 
 public class MainMenuScript : MonoBehaviour {
 
-    private LevelManager levelManager;//get handle on LevelManager object
+    private LevelManager levelManager; // Get handle on LevelManager object.
     
 
     void Start()
     {
-        levelManager = new LevelManager();// create new instance of level manager
+        levelManager = new LevelManager();// Create new instance of level manager.
 
     }
 
 	public void PlayGame()
     {
         
-        levelManager.ChangeLevel(Levels.Control_Settings);// change level when this method is triggered
+        levelManager.ChangeLevel(Levels.Control_Settings);// Change level when this method is triggered.
     }
 
     public void ShareButton()
     {
-        levelManager.ChangeLevel(Levels.Share);// change level when this method is triggered
+        levelManager.ChangeLevel(Levels.Share);// Change level when this method is triggered.
     }
 
     public void Quit()
     {
-        levelManager.QuitGame();// when the user clicks "QUIT"
+        levelManager.QuitGame();// When the user clicks "QUIT".
     }
 }

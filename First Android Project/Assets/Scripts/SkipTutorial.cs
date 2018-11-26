@@ -11,8 +11,8 @@ public class SkipTutorial : MonoBehaviour {
 
     void Start()
     {
-        Scene m_Scene = SceneManager.GetActiveScene(); // get a handle on the active scene
-        sceneName = m_Scene.name; // get a handle on the active scenes name
+        Scene m_Scene = SceneManager.GetActiveScene(); // Get a handle on the active scene.
+        sceneName = m_Scene.name; // Get a handle on the active scenes name.
     }
 	
 	

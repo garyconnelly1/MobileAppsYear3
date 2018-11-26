@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : MonoBehaviour { // The base class for handling all scene changes throughout the game.
 
     public void ChangeLevel(string level)
     {
 
-        SceneManager.LoadScene(level);//change level
+        SceneManager.LoadScene(level); // Change scene.
     }
 
     public void QuitGame()
     {
-        Application.Quit();//closes the application once this method is triggered
+        Application.Quit(); // Closes the application once this method is triggered.
     }
 
 }

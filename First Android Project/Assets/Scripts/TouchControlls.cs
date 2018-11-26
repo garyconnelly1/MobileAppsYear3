@@ -15,23 +15,23 @@ public class TouchControlls : MonoBehaviour { // Simple class to manage how the 
 
     void Start()
     {
-        manager = new LevelManager();
+        manager = new LevelManager(); // Initialize the Level Manager.
     }
 
-    public void Touch()
+    public void Touch() // If the user wants touch controls.
     {
-        PlayerPrefs.SetString("Control", "Touch");
-        manager.ChangeLevel(Levels.Level_menu);
+        PlayerPrefs.SetString("Control", "Touch"); // Set the "Control" prefab to "Touch".
+        manager.ChangeLevel(Levels.Level_menu); // Redirect to the levels menu.
     }
 
     public void KeyPad()
     {
-        PlayerPrefs.SetString("Control", "Key");
-        manager.ChangeLevel(Levels.Level_menu);
+        PlayerPrefs.SetString("Control", "Key"); // Set the "Control" prefab to "Key" for keyboard controls.
+        manager.ChangeLevel(Levels.Level_menu); // Redirect to the levels menu.
     }
 
     public void MainMenu()
     {
-        manager.ChangeLevel(Levels.Main_menu);
+        manager.ChangeLevel(Levels.Main_menu); // An option to be redirected back to the main menu.
     }
 }

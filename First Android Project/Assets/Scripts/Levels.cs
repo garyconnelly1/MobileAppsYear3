@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Assets.Scripts
 {
-    static class Levels // creating a class to handle the level names with constants for more flexibility
+    static class Levels // Creating a class to handle the scene names with constants for more flexibility.
     {
         public const string Level_1 = "Level1";
         public const string Level_2 = "Level2";

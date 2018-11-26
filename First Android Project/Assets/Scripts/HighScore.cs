@@ -5,13 +5,13 @@ using UnityEngine;
 public class HighScoreCalculation : MonoBehaviour {
     private static int PlayerHighScore;
 
-    public static int getHighScore(string level) // use a static method so we can access it without needing an instance
+    public static int getHighScore(string level) // Use a static method so we can access it without needing an instance.
     {
-        return PlayerPrefs.GetInt(level); // return the highscore for the level that was passed in
+        return PlayerPrefs.GetInt(level); // Return the highscore for the level that was passed in.
     }
 	
-	public static void setHighScore(string level, int score) // use a static method so we can access it without needing an instance
+	public static void setHighScore(string level, int score) // Use a static method so we can access it without needing an instance.
     {
-        PlayerPrefs.SetInt(level, score); // set the high score for the level that was passed in, using the score that was passed in
+        PlayerPrefs.SetInt(level, score); // Set the high score for the level that was passed in, using the score that was passed in.
     }
 }

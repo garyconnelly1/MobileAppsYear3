@@ -11,15 +11,15 @@ public class PlayerHealth : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        levelManager = new LevelManager();// create new instance of level manager
+        levelManager = new LevelManager();// Create new instance of level manager.
     }
 	
 	// Update is called once per frame
 	void Update () {
         if (gameObject.transform.position.y < deathPoint)
         {
-            Die(); // kill the player when it falls below a certain point on the y axis
-            Player_move.facingRight = false; // reset the direction the player is facing when it dies
+            Die(); // Kill the player when it falls below a certain point on the y axis.
+            Player_move.facingRight = false; // Reset the direction the player is facing when it dies.
         }
 
        
@@ -27,6 +27,6 @@ public class PlayerHealth : MonoBehaviour {
 
     void Die()
     {
-        levelManager.ChangeLevel(Levels.Level_menu);// redirect the user to the level selection menu when player dies
+        levelManager.ChangeLevel(Levels.Level_menu);// Redirect the user to the level selection menu when player dies.
     }
 }

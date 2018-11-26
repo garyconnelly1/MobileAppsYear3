@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 
-public class Player_move : MonoBehaviour {
-
+public class Player_move : MonoBehaviour { // Class that controlls the players movements.
+    // Variables.
     private int playerSpeed = 115;
     public static bool facingRight;
     public int playerJumpPower = 1250;
@@ -20,7 +20,6 @@ public class Player_move : MonoBehaviour {
     void start()
     {
         facingRight = false;
-       // audioManager = new AudioManager();
         audioManager.Play("MainTheme");
     }
     
@@ -29,20 +28,20 @@ public class Player_move : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        playerRaycast();
-        PlayerMove();
+        playerRaycast(); // Start the player Raycast.
+        PlayerMove(); // Move the player.
 		
 	}
 
     void PlayerMove()
     {
-        if (PlayerPrefs.GetString("Control") == "Touch")
+        if (PlayerPrefs.GetString("Control") == "Touch") // Depending on what the user selected earlier.
         {
-            TouchMovements();
+            TouchMovements(); // Trigger touch controlls method.
         }
         else
         {
-            KeyBoardMovement();
+            KeyBoardMovement(); // Trigger keyboard controlls method.
         }
         
         // 
@@ -52,20 +51,20 @@ public class Player_move : MonoBehaviour {
     private void FlipPlayer()
     {
        
-        //flip code
+        // Flip code.
         facingRight = !facingRight;
         Vector2 localScale = gameObject.transform.localScale;
         localScale.x *= -1;
-        transform.localScale = localScale; // simply puts the game character facing the other way
+        transform.localScale = localScale; // Simply puts the game character facing the other way.
     }
 
     public void Jump()
     {
-        if (isGrounded == true) // only jump if the player is already on the ground
+        if (isGrounded == true) // Only jump if the player is already on the ground.
         {
            
-            GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower); // character moves up
-            isGrounded = false; // character is not grounded and therefore cannot jump
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower); // Character moves up.
+            isGrounded = false; // Character is not grounded and therefore cannot jump.
 
         }
         
@@ -76,13 +75,13 @@ public class Player_move : MonoBehaviour {
         RaycastHit2D rayUp = Physics2D.Raycast(transform.position, Vector2.up);
         if (rayUp != null && rayUp.collider != null && rayUp.distance < distanceToBottomPlayer && rayUp.collider.tag == "BreakBox")
         {
-            Destroy(rayUp.collider.gameObject); // to destroy the breakable boxes
+            Destroy(rayUp.collider.gameObject); // To destroy the breakable boxes.
         }
-            RaycastHit2D rayDown = Physics2D.Raycast(transform.position, Vector2.down); // to kill an enemy when jumped on
+            RaycastHit2D rayDown = Physics2D.Raycast(transform.position, Vector2.down); // To kill an enemy when jumped on.
         if (rayDown != null && rayDown.collider != null && rayDown.distance < distanceToBottomPlayer && rayDown.collider.tag == "Enemy")
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * 1000);
-            rayDown.collider.gameObject. GetComponent<Rigidbody2D>().AddForce(Vector2.right * 200);// move to the right after hit enemy
+            rayDown.collider.gameObject. GetComponent<Rigidbody2D>().AddForce(Vector2.right * 200);// Move to the right after hit enemy.
             rayDown.collider.gameObject.GetComponent<Rigidbody2D>().gravityScale = 8;
             rayDown.collider.gameObject.GetComponent<Rigidbody2D>().freezeRotation = false;
             rayDown.collider.gameObject.GetComponent<BoxCollider2D>().enabled = false;
@@ -91,76 +90,74 @@ public class Player_move : MonoBehaviour {
 
         if (rayDown != null && rayDown.collider != null && rayDown.distance < distanceToBottomPlayer && rayDown.collider.tag != "Enemy")
         {
-            isGrounded = true; // so the player can bounce on the enemy
+            isGrounded = true; // So the player can bounce on the enemy
         }
 
 
     }
 
-    void TouchMovements() // touch control code
+    void TouchMovements() // Touch control code.
     {
         moveX = CrossPlatformInputManager.GetAxisRaw("Horizontal");
         playerSpeed = 50;
 
-        // animations
-        if (moveX != 0)
+        if (moveX != 0) // Animations.
         {
-            GetComponent<Animator>().SetBool("isMoving", true); // play the moving animation
+            GetComponent<Animator>().SetBool("isMoving", true); // Play the moving animation.
         }
         else
         {
-            GetComponent<Animator>().SetBool("isMoving", false); // play the idol animation
+            GetComponent<Animator>().SetBool("isMoving", false); // Play the idol animation.
         }
 
-        //player direction
-        if (moveX < 0.0f && facingRight == false) // so the player is facing left when moving left
+        // Player direction.
+        if (moveX < 0.0f && facingRight == false) // So the player is facing left when moving left.
         {
             FlipPlayer();
         }
-        else if (moveX > 0.0f && facingRight == true)  // so the player is facing right when moving right
+        else if (moveX > 0.0f && facingRight == true)  // So the player is facing right when moving right.
         {
             FlipPlayer();
         }
         
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(
-            moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y); // move the player
+            moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y); // Move the player.
 
 
 
     }
 
-    void KeyBoardMovement() // if the user is using a keyboard (mainly for testing purposes)
+    void KeyBoardMovement() // If the user is using a keyboard.
     {
-        playerSpeed = 10; // set the player speed to 10
+        playerSpeed = 10; // Set the player speed to 10.
         testX = Input.GetAxis("Horizontal");
        
-        if (Input.GetButtonDown("Jump") && isGrounded == true) // if the space bar is hit
+        if (Input.GetButtonDown("Jump") && isGrounded == true) // If the space bar is hit.
         {
             Jump();
         }
 
-        // animations
-        if (testX != 0)
+        if (testX != 0)  // Animations.
         {
-            GetComponent<Animator>().SetBool("isMoving", true); // play the moving animation
+            GetComponent<Animator>().SetBool("isMoving", true); // Play the moving animation.
         }
         else
         {
-            GetComponent<Animator>().SetBool("isMoving", false); // play the idol animation
+            GetComponent<Animator>().SetBool("isMoving", false); // Play the idol animation.
         }
 
       
-        //player direction
-        if (testX < 0.0f && facingRight == false) // so the player is facing left when moving left
+        // Player direction.
+        if (testX < 0.0f && facingRight == false) // So the player is facing left when moving left.
         {
             FlipPlayer();
         }
-        else if (testX > 0.0f && facingRight == true) // so the player is facing right when moving right
+        else if (testX > 0.0f && facingRight == true) // So the player is facing right when moving right.
         {
             FlipPlayer();
         }
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(
-        testX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y); // move the player
+        testX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y); // Move the player.
     }
 
 }

@@ -7,11 +7,11 @@ public class EnemyMove : MonoBehaviour {
     public int xMove;
     public float hitDistance = 0.7f;
 
-    private LevelManager levelManager;//get handle on LevelManager object
+    private LevelManager levelManager; // Get handle on LevelManager object.
 
     void Start()
     {
-        levelManager = new LevelManager();// create new instance of level manager
+        levelManager = new LevelManager();// Create new instance of level manager.
     }
 
 
@@ -25,16 +25,16 @@ public class EnemyMove : MonoBehaviour {
         if (hit.distance < hitDistance)
         {
             flip();
-            if (hit.collider.tag == "Player") // if the enemy hits the player
+            if (hit.collider.tag == "Player") // If the enemy hits the player.
             {
-                Player_move.facingRight = false; // to reset the direction of the player
-                Destroy(hit.collider.gameObject); // kill the player and redirect to levels menu
+                Player_move.facingRight = false; // To reset the direction of the player.
+                Destroy(hit.collider.gameObject); // Kill the player and redirect to levels menu.
                 levelManager.ChangeLevel("LevelsMenu");
             }
         }
        
 	}
-    void flip () // flip the enemy when it reaches a certain position
+    void flip () // Flip the enemy when it reaches a certain position.
     {
         Vector2 localScale = gameObject.transform.localScale;
         localScale.x *= -1;

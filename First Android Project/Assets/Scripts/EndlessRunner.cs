@@ -8,19 +8,19 @@ public class EndlessRunner : MonoBehaviour {
 
     void Start()
     {
-        GetComponent<Animator>().SetBool("isMoving", true); // play the moving animation
+        GetComponent<Animator>().SetBool("isMoving", true); // Play the moving animation.
     }
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown(KeyCode.UpArrow)) // when the up arrow is pressed
+        if (Input.GetKeyDown(KeyCode.UpArrow)) // When the up arrow is pressed.
         {
-            Jump(); // invoke jump method
+            Jump(); // Invoke jump method.
         }
 	}
 
     public void Jump()
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower); // move the player upward
+        GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower); // Move the player upward.
     }
 }

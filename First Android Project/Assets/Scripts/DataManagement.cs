@@ -5,6 +5,8 @@ using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
+/* Ended up not using this class. */
+
 public class DataManagement : MonoBehaviour {
 
     public static DataManagement dataManagement;
@@ -26,25 +28,25 @@ public class DataManagement : MonoBehaviour {
 
     public void saveData()
     {
-        BinaryFormatter binFormatter = new BinaryFormatter(); // this creates a binary formatter
-        FileStream file = File.Create(Application.persistentDataPath + "/gameInfo.dat");// this creates file
-        gameData data = new gameData();// creates container for data
+        BinaryFormatter binFormatter = new BinaryFormatter(); // This creates a binary formatter.
+        FileStream file = File.Create(Application.persistentDataPath + "/gameInfo.dat");// This creates file.
+        gameData data = new gameData();// Creates container for data.
         data.highScore = highScore;
-        binFormatter.Serialize(file, data);//serializes the data into "gameInfo" file
+        binFormatter.Serialize(file, data);// Serializes the data into "gameInfo" file.
         file.Close();//close file
     }//end saveData
 
     public void loadData()
     {
-        if (File.Exists(Application.persistentDataPath + "/gameInfo.dat"))// if there is data to load
+        if (File.Exists(Application.persistentDataPath + "/gameInfo.dat"))// If there is data to load.
         {
             BinaryFormatter binFormatter = new BinaryFormatter();
-            FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat", FileMode.Open);//opens requested file
-            gameData data = (gameData)binFormatter.Deserialize(file); // Decrypts data
+            FileStream file = File.Open(Application.persistentDataPath + "/gameInfo.dat", FileMode.Open); // Opens requested file.
+            gameData data = (gameData)binFormatter.Deserialize(file); // Decrypts data.
             file.Close();
             highScore = data.highScore;
-        }//end if
-    }//end load data
+        } // End if.
+    } // End load data.
 }
 
 [Serializable]

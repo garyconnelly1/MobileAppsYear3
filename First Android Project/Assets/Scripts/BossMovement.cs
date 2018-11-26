@@ -8,12 +8,12 @@ public class BossMovement : MonoBehaviour {
     public float xMax;
     public float xMin;
     private bool isRight;
-    private LevelManager levelManager;//get handle on LevelManager object
+    private LevelManager levelManager; // Get handle on LevelManager object.
 
     // Use this for initialization
     void Start () {
-        isRight = true; // so the boss starts by moving right
-        levelManager = new LevelManager();// create new instance of level manager
+        isRight = true; // So the boss starts by moving right.
+        levelManager = new LevelManager();// Create new instance of level manager.
     }
 	
 	// Update is called once per frame
@@ -23,53 +23,47 @@ public class BossMovement : MonoBehaviour {
 
         if (transform.position.x < xMax && isRight == true) 
         {
-            moveRight(); // call the move right method
+            moveRight(); // Call the move right method.
         }
         if (transform.position.x >= xMax)
         {
             Flip();
-            isRight = false; // reset isRight to false to stop the movement
+            isRight = false; // Reset isRight to false to stop the movement.
         }
         if (!isRight)
         {
-            moveLeft(); // start moving left
+            moveLeft(); // Start moving left.
         }
 
         if (transform.position.x <= xMin)
         {
             Flip();
-            isRight = true; // reset isRight to true so it will turn around again and move right
+            isRight = true; // Reset isRight to true so it will turn around again and move right.
         }
     }
 
     void moveLeft()
     {
         transform.position = new Vector2(transform.position.x - bossSpeed * Time.deltaTime,
-         transform.position.y); // create a new vector2 that will move the boss negatively along the x axis
+         transform.position.y); // Create a new vector2 that will move the boss negatively along the x axis.
     }
 
     void moveRight()
     {
         transform.position = new Vector2(transform.position.x + bossSpeed * Time.deltaTime,
-          transform.position.y); // create a new vector2 that will move the boss positively along the x axis
+          transform.position.y); // Create a new vector2 that will move the boss positively along the x axis.
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player") // if the boss hits the player
+        if (other.gameObject.tag == "Player") // If the boss hits the player.
         {
-            Player_move.facingRight = false; // reset the directiom the player is facing
-            levelManager.ChangeLevel("LevelsMenu"); // redirect back to level selection menu
+            Player_move.facingRight = false; // Reset the directiom the player is facing.
+            levelManager.ChangeLevel("LevelsMenu"); // Redirect back to level selection menu.
         }
-        /*
-        if (other.gameObject.tag == "Seed") // if the boss hits the player
-        {
-            Destroy(other.gameObject); // destroy that seed object
-        }
-        */
     }
 
-    void Flip()
+    void Flip() // Flip the boss.
     {
         Vector2 localScale = gameObject.transform.localScale;
         localScale.x *= -1;

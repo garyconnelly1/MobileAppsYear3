@@ -12,9 +12,9 @@ public class ShootingScript : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X) && transform.position.x > shootingPosition) // player must be at a certain point in the level before they can shoot
+        if (Input.GetKeyDown(KeyCode.X) && transform.position.x > shootingPosition) // Player must be at a certain point in the level before they can shoot.
         {
-            Shoot(); // call shoot method
+            Shoot(); // Call shoot method.
         }
 
 
@@ -24,7 +24,7 @@ public class ShootingScript : MonoBehaviour {
     {
         if (transform.position.x > shootingPosition)
         {
-            Instantiate(bullet, spawnPoint.position, Quaternion.identity); // create the seed object
+            Instantiate(bullet, spawnPoint.position, Quaternion.identity); // Create the seed object.
         }
        
     }
