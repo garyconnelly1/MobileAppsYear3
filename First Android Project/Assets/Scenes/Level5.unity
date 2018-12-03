@@ -3462,6 +3462,11 @@ Prefab:
       propertyPath: shootingPosition
       value: 125
       objectReference: {fileID: 0}
+    - target: {fileID: 61190346916591632, guid: a6e873c5ed44ce84889be63fb450289a,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 9e8e4eb4c1745164c88680991d3a848b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6e873c5ed44ce84889be63fb450289a, type: 2}
   m_IsPrefabAsset: 0
