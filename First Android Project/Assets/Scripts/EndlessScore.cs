@@ -10,12 +10,12 @@ public class EndlessScore : MonoBehaviour {
     public GameObject highScoreUI;
     private int time = 0;
     private int score;
-    Scene m_Scene = SceneManager.GetActiveScene();
+    Scene m_Scene;
     private string sceneName;
 
     // Use this for initialization
     void Start () {
-
+        m_Scene = SceneManager.GetActiveScene();
         sceneName = m_Scene.name; // Get a handle on the current scene name.
         highScoreUI.gameObject.GetComponent<Text>().text = "High Score " + HighScoreCalculation.getHighScore(sceneName); // Retrieve the high socre for this level from the HighScoreCalculator.
 
